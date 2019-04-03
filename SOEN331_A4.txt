@@ -1,0 +1,61 @@
+====================================================================
+Operating Systems A4 Rough Draft: (daniel)
+====================================================================
+
+Spec: Location(String, Point);
+Sort: Location;
+Imports: String, Point;
+Operations: 
+	newlocation: String X Point --> Location;
+	setdescription: Location X String --> Location;
+	getdescription: Location --> String;
+	setpoint: Location X Point --> Point;
+	getpoint: Location --> Point
+Variabes: 
+	s, t: String; p, q: Point;
+Axioms: 
+	[A1] getdescription((newlocation(s, p)) = s;
+	[A2] getpoint((newlocation(s, p)) = p; 
+	[A3] getdescription(setdescription(newlocation(s, p), t)) = t;
+	[A4] getpoint(setpoint(newlocation(s, p), q)) = q;
+
+====================================================================
+
+Spec: Map;
+Sort: Map;
+Imports: Boolean, Natural, String, Point; !!!!!!use Natural anywhere?????!!!!!!
+Operations:
+	newmap --> Map;
+	addlocation: Map X Location --> Map;
+	deletelocation: Map X Location --> Map;
+	containsdescription: Map X String --> Boolean;
+	containspoint: Map X Point --> Boolean;
+	findlocation: Map X String --> Point;
+	isempty: Map --> Boolean;
+	clear: Map --> Map;
+	size: Map --> Natural; // INCLUDING THIS ACCORDING TO QA AND AXIOM NEED
+Variables: 
+	
+Axioms:
+	[A1] isempty(newmap) = true;
+	[A2] isempty(clear(m)) = true;
+	[A3] containslocation(addlocation(m, l), l) = true;
+	[A4] findlocation(addlocation(addlocation(m, newlocation(s, p)), newlocation(s, q))) = q; // double check
+	[A5] 
+	[A6] 
+	[A7] 
+	[A8] 
+	[A9] 
+	/////[A10] size(newmap) = 0;
+	/////[A11] size(addlocation(addlocation(newmap, newlocation(s, p), newlocation(s, q))) = 
+		if (p != q) // check point equality somehow else
+			size(m) + 1;
+		else 
+			size(m); 
+
+Preconditions: 
+	//TODO
+	//TODO
+	
+	
+	
